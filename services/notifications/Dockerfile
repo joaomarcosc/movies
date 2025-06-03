@@ -17,5 +17,5 @@ FROM base
 WORKDIR /app
 COPY --from=deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
-ENV NODE_ENV production
+ENV NODE_ENV=production
 CMD ["node", "./dist/index.js"]
