@@ -1,0 +1,50 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --outDir dist",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "codegen": "kysely-codegen --out-file src/db/generated.d.ts --dialect postgres --camel-case",
+    "migrate:create": "kysely migrate:make",
+    "migrate:run": "kysely migrate:latest",
+    "migrate:rollback": "kysely migrate:rollback --all",
+    "codegen:run": "kysely-codegen --out-file src/db/generated.d.ts --dialect postgres --camel-case"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.817.0",
+    "@aws-sdk/s3-request-presigner": "^3.817.0",
+    "@types/amqplib": "^0.10.7",
+    "amqplib": "^0.10.8",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "kysely": "^0.28.2",
+    "node-cron": "^4.0.7",
+    "pg": "^8.16.0",
+    "typescript": "^5.8.3",
+    "zod": "^3.25.20"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.15.21",
+    "@types/pg": "^8.15.2",
+    "eslint": "^9.27.0",
+    "kysely-codegen": "^0.18.5",
+    "kysely-ctl": "^0.13.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2"
+  }
+}
